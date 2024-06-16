@@ -1,15 +1,55 @@
-import './App.css'
+import './App.css';
+import React, { useEffect, useRef } from 'react';
+import {Formik, Form, Field, ErrorMessage} from "formik";
 
 function App() {
+  // Variáveis
   const apikeynoticias = `EppOEezqBbNodqRDFIDJKzGXAdGgG6oG`;
-  const apikeyclima = `b85cd0d62fa31064681a4e0ad6a81b61`;
+  const apikeyclima = `0de1f91a7e589fb85bb403399de16f61`;
+  const cidadeRef = useRef(null);
+  const tempminRef = useRef(null);
+  const tempmaxRef = useRef(null);
+  const imgclima = useRef(null);
 
+  // API clima
+  useEffect(() => {
+    if("geolocation" in navigator){
+      navigator.geolocation.getCurrentPosition(function(position){
+      console.log(position);
+      const lon = position.coords.longitude;
+      const lat = position.coords.latitude;
+
+      const acessardados = async() => {
+        const urlapiclima =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikeyclima}`;
+        const res = await fetch(urlapiclima);
+        const data = await res.json(); 
+        console.log(data);
+        return data;
+      }
+
+      const mostrardados = async() => {
+        const data = await acessardados();
+        cidadeRef.current.innerHTML = data.name;
+        tempmaxRef.current.innerHTML = parseInt(data.main.temp_max.toString().slice(0, 2)) + "°c"; 
+        tempminRef.current.innerHTML = parseInt(data.main.temp_min.toString().slice(0, 2)) + "°c";
+        const tempo = data.weather[0].icon;
+        imgclima.current.setAttribute("src", `http://openweathermap.org/img/wn/${tempo}.png`)
+      }
+      mostrardados();
+    },function(error){
+      console.log(error);
+    })
+    }else{
+      alert("não foi possivel pegar a localização");  
+    }
+    }, [apikeyclima], [apikeynoticias]);
+
+  
   return (
     <div className="App">
       <header>
         <main>
           <div className="barra-preta">
-
             <div className="entrebnt">
                 <button id="entrebnt">ENTRE</button>
             </div>
@@ -33,51 +73,46 @@ function App() {
                 </li>
               </ul>
             </div>
-
           </div>
         </main>
       </header>
 
       <section>
-
         <div className="pre-conteudo">
-            <div className="logo">
-                <img src="/src/imagens/logo.png" alt="logo"/>
-            </div>
+          <div className="logo">
+              <img src="/src/imagens/logo.png" alt="logo"/>
+          </div>
 
-            <div className="cripto-container">
-
-            </div>
-
-            <div className="previsaodotempo">
-              <div className="cidade-tempo">
-                <div className="tempoimg">
-                  <img src="https://openweathermap.org/img/wn/10d@2x.png"/>
-                </div>
-                <div className="cidade">
-                  <font face="Ubuntu"><span>Parnamirim</span></font>
-                  <img src="/src/imagens/lupa.png"/>
+          <div className="previsaodotempo">
+            <div className="cidade-tempo">
+              <div className="tempoimg">
+                <img id="imgclima" ref={imgclima} src=""/>
               </div>
+              <div className="cidade">
+                <font face="Ubuntu">
+                  <span id="nomecidade" ref={cidadeRef}></span>
+                </font>
+                <img src="/src/imagens/lupa.png"/>               
+              </div>
+
               <div className="temperatura">
                 <div className="temp-min">
-                  <font face="Ubuntu" ><span>23ºC</span></font>
+                  <font face="Ubuntu">
+                    <span id="temp-min" ref={tempminRef}></span>
+                  </font>
                 </div>
                 <div className="temp-max">
-                  <font face="Ubuntu"><span>25ºC</span></font>
+                  <font face="Ubuntu">
+                    <span id="temp-max" ref={tempmaxRef}></span>
+                  </font>
                 </div>
               </div>
             </div>
-
-            <div className="buscar-cidade">
-
-              </div>
-            </div>
-
-
-            <div className="buscar">
-                <input type="text" id="buscar" placeholder="Buscar Notícias..."/>
-                <img src="/src/imagens/lupa.png" id="buscarbnt"/>
-            </div>
+          </div>
+          <div className="buscar">
+              <input type="text" id="buscar" placeholder="Buscar Notícias..."/>
+              <img src="/src/imagens/lupa.png" id="buscarbnt"/>
+          </div>
         </div>
 
         <div className="conteudo">
@@ -96,3 +131,4 @@ function App() {
 }
 
 export default App;
+
