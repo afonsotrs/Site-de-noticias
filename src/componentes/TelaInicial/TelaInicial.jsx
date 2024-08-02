@@ -1,4 +1,4 @@
-import 'C:\Users\andre\Documents\GitHub\Site-de-noticias\src\App.css';
+import '/src/App.css';
 import React, { useEffect, useRef } from 'react';
 // import {Formik, Form, Field, ErrorMessage} from "formik";
 
