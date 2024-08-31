@@ -1,0 +1,156 @@
+body{
+  width: 100%;
+  height: 100%;
+}
+
+header{
+  width: 100%;
+  background-color: black;
+  height: 60px;
+}
+
+main{
+  margin: auto;
+  width: 980px;
+  padding: relative;
+}
+
+section{
+  margin: auto;
+  margin-top: 5px;
+  width: 980px;
+} 
+
+
+#entrebnt{
+  background-color: black;
+  color: white;
+  font: arial;
+  padding-top: 12px;
+  margin-top: 12px ;
+  width: 50px;
+  float: left;
+  border: none;
+}
+
+.redes-sociais ul li{
+  display: inline-block;
+  float: right;
+  list-style: none;
+}
+/* Ajustar tamanho da logo das redes sociais */
+.redes-sociais ul li a img{
+  height: 50px;
+  padding: 6px;
+}
+
+.pre-conteudo{
+  margin-top: 5px;
+  padding-top: 5px;
+  width: 980px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo{
+  width: 180px;
+
+}
+
+.logo img{
+  height:70px;
+  display: flex;
+}
+
+.previsaodotempo{
+  width: 180px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cidade-tempo{
+  height: 30px;
+}
+
+.cidade img{
+  height: 20px;
+}
+
+.tempoimg{
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+.tempoimg img{
+  height: 50px;
+  vertical-align: middle;
+}
+
+.temperatura{
+  padding-top: 3px;
+  margin-top: 3px;
+}
+
+.temp-min{
+  color: blue;
+  float: left;
+  padding-right: 10px;
+}
+
+.temp-max{
+  color: red;
+}
+
+#formulariobuscarcidade{
+  display: none;
+  position: fixed;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:20px;
+  width:50px;
+}
+
+.buscar{
+  border:solid 1px;
+  border-radius:13px;
+  width:200px;
+}
+
+.buscar input{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:150px;
+}
+
+#buscarbnt{
+  height: 28px;
+  padding-top: 3px;
+}
+
+.conteudo{
+  border-top: 2px solid black;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+#musicabnt img{
+  width:  10%;
+}
+
+#musicabnt{
+  width: 10%;
+  float: right;
+}
