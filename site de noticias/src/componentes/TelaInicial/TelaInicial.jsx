@@ -12,9 +12,9 @@ function TelaInicial() {
     const imgclima = useRef(null);
 
     const navigate = useNavigate();
-    document.querySelector('#entrebnt').addEventListener('click', () => {
+    const navegar = () => {
         navigate('/login');
-    })
+    };
 
     // API clima
     useEffect(() => {
@@ -54,7 +54,7 @@ function TelaInicial() {
         <main>
             <div className="barra-preta">
             <div className="entrebnt">
-                    <button id="entrebnt">ENTRE</button>
+                    <button id="entrebnt" onClickCapture={navegar}>ENTRE</button>
             </div>
 
             <div className="redes-sociais">
