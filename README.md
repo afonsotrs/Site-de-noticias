@@ -11,3 +11,5 @@ Currently, two official plugins are available:
 
 - https://youtu.be/SwCA0K3gy90?si=JqQyv9sujXZPiK_8 // api do google
 - https://www.youtube.com/watch?v=h67GTiqDbT0&ab_channel=C%C3%B3digoWeb // guia do site
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent //comando pra autenticar a ssh key
+- 
