@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import Reactdom from 'react-dom'
 import './index.css'
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import TelaInicial from './componentes/TelaInicial/TelaInicial.jsx'
@@ -22,8 +22,9 @@ const rota = createBrowserRouter([
   }
 ]);
 
-createRoot(document.getElementById('root')).render(
+Reactdom.render(
   <StrictMode>
     <RouterProvider router={rota} />
   </StrictMode>,
+  document.getElementById('root')
 )
