@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 # Links:
 
 - https://youtu.be/SwCA0K3gy90?si=JqQyv9sujXZPiK_8
+- https://www.youtube.com/watch?v=h67GTiqDbT0&ab_channel=C%C3%B3digoWeb
