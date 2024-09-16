@@ -11,6 +11,7 @@ const TelaCadastro = () => {
             <div className="headercadastro">
                 <h1>Cadastre-se</h1>
             </div>
+            <input type="text" id="nome" placeholder="Digite seu nome" />
             <input type="email" id="email" placeholder="Digite seu email" />
             <input type="password" id="senha" placeholder="Digite sua senha" />
             <p id="entrecom">ou entre com</p>

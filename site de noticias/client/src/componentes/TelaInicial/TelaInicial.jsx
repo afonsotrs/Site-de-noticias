@@ -119,7 +119,35 @@ function TelaInicial() {
         </div>
 
         <div className="conteudo">
+            <div className='categorias'>
+                <button id='bntcategorias'>
+                    <p>ECONOMIA</p>
+                </button>
+                <button id='bntcategorias'>
+                    <p>ESPORTES</p>
+                </button>
+                <button id='bntcategorias'>
+                    <p>CULTURA</p>
+                </button>
+                <button id='bntcategorias'>
+                    <p>ENTRETERIMENTO</p>
+                </button>
+                <button id='bntcategorias'>
+                    <p>FOFOCA</p>
+                </button>
+                <button id='bntcategorias'>
+                    <p>MODA</p>
+                </button>
+                <button id='bntcategorias'>
+                    <p>MUSICA</p>
+                </button>
+            </div>
 
+            <div className="principaisnoticias">
+                <h1>Notícias do dia</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5SAMcJQwsoL2QowsKsjv3JTCNtE0mx8rL5Q&s" alt="" />
+                <p>Datena senta o cacete no Pablo Marçal</p>
+            </div>
             
         </div>
 

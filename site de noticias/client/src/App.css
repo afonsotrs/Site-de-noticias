@@ -12,14 +12,14 @@ header{
 
 main{
   margin: auto;
-  width: 980px;
+  width: 75vw;
   padding: relative;
 }
 
 section{
   margin: auto;
   margin-top: 5px;
-  width: 980px;
+  width: 75vw ;
 } 
 
 
@@ -48,7 +48,7 @@ section{
 .pre-conteudo{
   margin-top: 5px;
   padding-top: 5px;
-  width: 980px;
+  width: 75vw;
   height: 100px;
   display: flex;
   align-items: center;
@@ -186,6 +186,14 @@ section{
   flex-direction: column; 
 }
 
+#nome{
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 #email{
   margin-bottom: 15px;
   padding: 10px;
@@ -250,6 +258,7 @@ section{
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 5px;
+  margin-top: 10px;
 } 
 
 #googleimg img{
@@ -262,4 +271,16 @@ section{
 
 #entrecom{
   text-align: center;
+}
+
+/* Estilizando a parte das categorias */
+
+.categorias{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+#bntcategorias{
+  border: none;
 }
